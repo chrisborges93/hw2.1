@@ -85,18 +85,219 @@
 # TODO!
 
 # Prints a header for the movies output
-puts "Movies"
-puts "======"
-puts ""
+# puts "Movies"
+# puts "======"
+# puts ""
 
 # Query the movies data and loop through the results to display the movies output.
 # TODO!
 
 # Prints a header for the cast output
-puts ""
-puts "Top Cast"
-puts "========"
-puts ""
+# puts ""
+# puts "Top Cast"
+# puts "========"
+# puts ""
 
 # Query the cast data and loop through the results to display the cast output for each movie.
 # TODO!
+
+Studio.destroy_all
+Movie.destroy_all
+Actor.destroy_all
+Role.destroy_all
+
+new_studio = Studio.new
+new_studio["name"] = "Warner Bros."
+new_studio.save
+
+studio = Studio.find_by({ "name" => "Warner Bros." })  # Fixed syntax error here
+
+new_movie = Movie.new
+new_movie["title"] = "Batman Begins"
+new_movie["year_released"] = "2005"
+new_movie["rated"] = "PG-13"
+new_movie["studio_id"] = studio["id"]
+new_movie.save
+
+new_movie = Movie.new
+new_movie["title"] = "The Dark Knight"
+new_movie["year_released"] = "2008"
+new_movie["rated"] = "PG-13"
+new_movie["studio_id"] = studio["id"]
+new_movie.save
+
+new_movie = Movie.new
+new_movie["title"] = "The Dark Knight Rises"
+new_movie["year_released"] = "2012"
+new_movie["rated"] = "PG-13"
+new_movie["studio_id"] = studio["id"]
+new_movie.save
+
+new_actor = Actor.new
+new_actor["name"] = "Christian Bale"
+new_actor.save
+
+new_actor = Actor.new
+new_actor["name"] = "Michael Caine"
+new_actor.save
+
+new_actor = Actor.new
+new_actor["name"] = "Liam Neeson"
+new_actor.save
+
+new_actor = Actor.new
+new_actor["name"] = "Katie Holmes"
+new_actor.save
+
+new_actor = Actor.new
+new_actor["name"] = "Gary Oldman"
+new_actor.save
+
+new_actor = Actor.new
+new_actor["name"] = "Heath Ledger"
+new_actor.save
+
+new_actor = Actor.new
+new_actor["name"] = "Aaron Eckhart"
+new_actor.save
+
+new_actor = Actor.new
+new_actor["name"] = "Maggie Gyllenhaal"
+new_actor.save
+
+new_actor = Actor.new
+new_actor["name"] = "Tom Hardy"
+new_actor.save
+
+new_actor = Actor.new
+new_actor["name"] = "Joseph Gordon-Levitt"
+new_actor.save
+
+new_actor = Actor.new
+new_actor["name"] = "Anne Hathaway"
+new_actor.save
+
+movie1 = Movie.find_by({ "title" => "Batman Begins" })
+movie2 = Movie.find_by({ "title" => "The Dark Knight" })
+movie3 = Movie.find_by({ "title" => "The Dark Knight Rises" })
+
+actor1 = Actor.find_by({ "name" => "Christian Bale" })
+actor2 = Actor.find_by({ "name" => "Michael Caine" })
+actor3 = Actor.find_by({ "name" => "Liam Neeson" })
+actor4 = Actor.find_by({ "name" => "Katie Holmes" })
+actor5 = Actor.find_by({ "name" => "Gary Oldman" })
+actor6 = Actor.find_by({ "name" => "Heath Ledger" })
+actor7 = Actor.find_by({ "name" => "Aaron Eckhart" })
+actor8 = Actor.find_by({ "name" => "Maggie Gyllenhaal" })
+actor9 = Actor.find_by({ "name" => "Tom Hardy" })
+actor10 = Actor.find_by({ "name" => "Joseph Gordon-Levitt" })
+actor11 = Actor.find_by({ "name" => "Anne Hathaway" })
+
+new_role = Role.new
+new_role["movie_id"] = movie1["id"]
+new_role["actor_id"] = actor1["id"]
+new_role["character_name"] = "Bruce Wayne"
+new_role.save
+
+new_role = Role.new
+new_role["movie_id"] = movie1["id"]
+new_role["actor_id"] = actor2["id"]
+new_role["character_name"] = "Alfred"
+new_role.save
+
+new_role = Role.new
+new_role["movie_id"] = movie1["id"]
+new_role["actor_id"] = actor3["id"]
+new_role["character_name"] = "Ra's Al Ghul"
+new_role.save
+
+new_role = Role.new
+new_role["movie_id"] = movie1["id"]
+new_role["actor_id"] = actor4["id"]
+new_role["character_name"] = "Rachel Dawes"
+new_role.save
+
+new_role = Role.new
+new_role["movie_id"] = movie1["id"]
+new_role["actor_id"] = actor5["id"]
+new_role["character_name"] = "Commissioner Gordon"
+new_role.save
+
+new_role = Role.new
+new_role["movie_id"] = movie2["id"]
+new_role["actor_id"] = actor1["id"]
+new_role["character_name"] = "Bruce Wayne"
+new_role.save
+
+new_role = Role.new
+new_role["movie_id"] = movie2["id"]
+new_role["actor_id"] = actor6["id"]
+new_role["character_name"] = "Joker"
+new_role.save
+
+new_role = Role.new
+new_role["movie_id"] = movie2["id"]
+new_role["actor_id"] = actor7["id"]
+new_role["character_name"] = "Harvey Dent"
+new_role.save
+
+new_role = Role.new
+new_role["movie_id"] = movie2["id"]
+new_role["actor_id"] = actor2["id"]
+new_role["character_name"] = "Alfred"
+new_role.save
+
+new_role = Role.new
+new_role["movie_id"] = movie2["id"]
+new_role["actor_id"] = actor8["id"]
+new_role["character_name"] = "Rachel Dawes"
+new_role.save
+
+new_role = Role.new
+new_role["movie_id"] = movie3["id"]
+new_role["actor_id"] = actor1["id"]
+new_role["character_name"] = "Bruce Wayne"
+new_role.save
+
+new_role = Role.new
+new_role["movie_id"] = movie3["id"]
+new_role["actor_id"] = actor5["id"]
+new_role["character_name"] = "Commissioner Gordon"
+new_role.save
+
+new_role = Role.new
+new_role["movie_id"] = movie3["id"]
+new_role["actor_id"] = actor9["id"]
+new_role["character_name"] = "Bane"
+new_role.save
+
+new_role = Role.new
+new_role["movie_id"] = movie3["id"]
+new_role["actor_id"] = actor10["id"]
+new_role["character_name"] = "John Blake"
+new_role.save
+
+new_role = Role.new
+new_role["movie_id"] = movie3["id"]
+new_role["actor_id"] = actor11["id"]
+new_role["character_name"] = "Selina Kyle"
+new_role.save
+
+puts "Movies"
+puts "======"
+puts ""
+
+#Added model relationships in actor.rb, movie.rb, role.rb, and studio.rb per online research because I could not get the name of the studio, actor, and movie to appear without it - only the reference id
+
+movies = Movie.all  
+for movie in movies
+  puts "#{movie["title"]} #{movie["year_released"]} #{movie["rated"]} #{movie.studio["name"]}"
+end
+
+roles = Role.includes(:movie, :actor).all
+puts "Top Cast"
+puts "========"
+puts ""
+for role in roles
+  puts "#{role.movie['title']} #{role.actor['name']} #{role['character_name']}"
+end
